@@ -45,10 +45,10 @@ public class App {
           String input3 = req.queryParams("input3");
           java.util.Scanner sc3 = new java.util.Scanner(input3);
           sc3.useDelimiter("[;\r\n]+");
-          java.util.ArrayList<Integer> inputList3 = new java.util.ArrayList<>();
+          java.util.ArrayList<String> inputList3 = new java.util.ArrayList<>();
           while (sc3.hasNext())
           {
-            int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            String value = sc3.next().replaceAll("\\s","");
             inputList3.add(value);
           }
           System.out.println(inputList3);
@@ -56,15 +56,15 @@ public class App {
           String input4 = req.queryParams("input4");
           java.util.Scanner sc4 = new java.util.Scanner(input4);
           sc1.useDelimiter("[;\r\n]+");
-          java.util.ArrayList<Integer> inputList4 = new java.util.ArrayList<>();
+          java.util.ArrayList<String> inputList4 = new java.util.ArrayList<>();
           while (sc4.hasNext())
           {
-            int value = Integer.parseInt(sc4.next().replaceAll("\\s",""));
+            String value = sc4.next().replaceAll("\\s","");
             inputList4.add(value);
           }
           System.out.println(inputList4);
 
-          String[] results = App.massProcess(inputList, inputList2, inputList3.get(0),inputList4.get(0));
+          String[] results = App.massProcess((Integer[])inputList.toArray(), (Integer[])inputList2.toArray(), inputList3.get(0),inputList4.get(0));
 
          Map map = new HashMap();
           map.put("result", Arrays.toString(results));

@@ -37,6 +37,18 @@ public class AppTest
         assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Add", "Round"), new String[] { "2", "4", "6", "8" }));
     }
 
+    public void testRoundDown() {
+        Integer[] arr1 = new Integer[] { 3 };
+        Integer[] arr2 = new Integer[] { 2 };
+        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Add", "Round Down"), new String[] { "1" }));
+    }
+
+    public void testRoundUp() {
+        Integer[] arr1 = new Integer[] { 3 };
+        Integer[] arr2 = new Integer[] { 2 };
+        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Add", "Round Up"), new String[] { "2" }));
+    }
+
     public void testSub() {
         Integer[] arr1 = new Integer[] { 1, 2, 3, 4 };
         Integer[] arr2 = new Integer[] { 1, 1, 1, 1 };
@@ -46,13 +58,19 @@ public class AppTest
     public void testMul() {
         Integer[] arr1 = new Integer[] { 1, 2, 3, 4 };
         Integer[] arr2 = new Integer[] { 1, 2, 3, 4 };
-        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Add", "Round"), new String[] { "1", "4", "9", "16" }));
+        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Subtract", "Round"), new String[] { "1", "4", "9", "16" }));
     }
 
     public void testDiv() {
         Integer[] arr1 = new Integer[] { 1, 2, 3, 4 };
         Integer[] arr2 = new Integer[] { 1, 1, 1, 1 };
-        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Add", "Round"), new String[] { "1", "2", "3", "4" }));
+        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Divide", "Round"), new String[] { "1", "2", "3", "4" }));
+    }
+
+    public void testNull() {
+        Integer[] arr1 = new Integer[] { 1, null, 3, 4 };
+        Integer[] arr2 = new Integer[] { 1, 2, 3, 4 };
+        assertTrue(Arrays.deepEquals(App.massProcess(arr1, arr2, "Add", "Round"), new String[] { "1", "", "6", "8" }));
     }
 
 }
