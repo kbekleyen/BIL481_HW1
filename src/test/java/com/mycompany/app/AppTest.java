@@ -1,5 +1,7 @@
 package com.mycompany.app;
 
+import java.util.Arrays;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -28,30 +30,27 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
 
-    /**
-     * Rigourous Test :-)
-     */
     public void testApp()
     {
         assertTrue( true );
     }
 
-    public void testFound() {
+    public void testAdd() {
       Integer[] arr1 = new Integer[]{1,2,3,4};
       Integer[] arr2 = new Integer[]{1,2,3,4};
-      assertEquals(App.massProcess(arr1,arr2,"Add","Round"), new Integer[]{2,4,6,8});
+      assertTrue(Arrays.deepEquals(App.massProcess(arr1,arr2,"Add","Round"), new String[]{"2","4","6","8"}));
     }
 
     public void testNotFound() {
-      
+        assertTrue( true );
     }
 
     public void testEmptyArray() {
-      
+        assertTrue( true );
     }
 
     public void testNull() {
-    
+        assertTrue( true );
     }
 
 }
