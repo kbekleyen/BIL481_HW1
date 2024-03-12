@@ -35,4 +35,23 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+    public void testFound() {
+      Integer[] arr1 = new Integer[]{1,2,3,4};
+      Integer[] arr2 = new Integer[]{1,2,3,4};
+      assertEquals(App.massProcess(arr1,arr2,"Add","Round"), new Integer[]{2,4,6,8});
+    }
+
+    public void testNotFound() {
+      
+    }
+
+    public void testEmptyArray() {
+      
+    }
+
+    public void testNull() {
+    
+    }
+
 }

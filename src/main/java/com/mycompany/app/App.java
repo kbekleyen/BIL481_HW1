@@ -7,7 +7,7 @@ public class App
 
     }
 
-    static String[] massProcess(Integer[] box1, Integer[] box2, String operation, String displayMode) throws Exception{
+    static String[] massProcess(Integer[] box1, Integer[] box2, String operation, String displayMode){
         String result[] = new String[box1.length];
         for(int i = 0; i<box1.length;i++){
             double num1 = (double)box1[i];
@@ -28,7 +28,7 @@ public class App
                 numResult = num1 / num2;
                     break;
                 default:
-                throw new Exception("Invalid Operation");
+                result[i] = "";
             }
             switch (displayMode) {
                 case "Fractional":
@@ -43,7 +43,7 @@ public class App
                 result[i] = String.format("%.3e",numResult);
                     break;
                 default:
-                throw new Exception("Invalid Display Mode");
+                result[i] = "";
             }
             
         }
